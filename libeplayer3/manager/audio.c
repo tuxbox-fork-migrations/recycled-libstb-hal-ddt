@@ -24,9 +24,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-// >>> MARTII
+#ifdef MARTII
 #include <libavformat/avformat.h>
-// <<< MARTII
+#endif
 #include "manager.h"
 #include "common.h"
 
@@ -217,7 +217,7 @@ static int Command(void  *_context, ManagerCmd_t command, void * argument) {
     case MANAGER_SET: {
         int id = *((int*)argument);
 
-// >>> MARTII
+#ifdef MARTII
 	// What's the argument supposed to be? apid or local index? --martii
 
 	if (id >= TrackCount) {
@@ -227,7 +227,7 @@ static int Command(void  *_context, ManagerCmd_t command, void * argument) {
 				break;
 		}
 	}
-// <<< MARTII
+#endif
         audio_mgr_printf(20, "%s::%s MANAGER_SET id=%d\n", FILENAME, __FUNCTION__, id);
 
         if (id < TrackCount)
