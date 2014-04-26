@@ -7,7 +7,7 @@ AM_CPPFLAGS += \
 
 AM_CXXFLAGS = -fno-rtti -fno-exceptions -fno-strict-aliasing
 
-AM_LDFLAGS = -lpthread -lasound -lass -lrt\
+AM_LDFLAGS = -lpthread -lasound -lass -lrt \
 	@AVFORMAT_LIBS@ \
 	@AVUTIL_LIBS@ \
 	@AVCODEC_LIBS@ \
@@ -24,4 +24,4 @@ libspark_la_SOURCES = \
 	pwrmngr.cpp \
 	record.cpp
 
-#AM_CPPFLAGS = -DF_INTERRUPTS=20000 -DIRMP_EMBED -DLIRC_IRMP
+#AM_CPPFLAGS += -DF_INTERRUPTS=20000 -DIRMP_EMBED -DLIRC_IRMP
